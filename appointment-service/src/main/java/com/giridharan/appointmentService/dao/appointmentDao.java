@@ -11,8 +11,21 @@ import com.giridharan.appointmentService.repository.appointmentRepo;
 @Component
 public class appointmentDao {
 	
-	@Autowired
+	
 	private appointmentRepo arepo;
+	
+	
+	public appointmentDao() {
+		super();
+	}
+	
+	@Autowired
+	public appointmentDao(appointmentRepo arepo) {
+		super();
+		this.arepo = arepo;
+	}
+
+
 
 	public ResponseEntity<Object> scheduleAppointment(appointment a) {
 		appointment savedAppointment = arepo.save(a);

@@ -1,10 +1,10 @@
-package com.giridharan;
+package com.giridharan.appointmentService;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DoctorServiceApplicationTests {
+class AppointmentServiceApplicationTests {
 
 	@Test
 	void contextLoads() {

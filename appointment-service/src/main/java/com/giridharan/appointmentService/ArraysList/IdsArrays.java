@@ -8,6 +8,8 @@ import org.springframework.stereotype.Component;
 
 import com.giridharan.appointmentService.entity.Doctor_id;
 import com.giridharan.appointmentService.entity.Patient_id;
+import com.giridharan.appointmentService.repository.doctor_id_repo;
+import com.giridharan.appointmentService.repository.patient_id_repo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,6 +28,28 @@ public class IdsArrays {
 	@Qualifier("patientIds")
 	private List<Integer> patient_ids;
 	
+	
+	private patient_id_repo prepo;
+	private doctor_id_repo drepo;
+	
+	
+	@Autowired
+	public IdsArrays(patient_id_repo prepo, doctor_id_repo drepo) {
+		super();
+		this.prepo = prepo;
+		this.drepo = drepo;
+	}
+	
+	{
+		for(Patient_id p : prepo.findAll()) {
+			patient_ids.add(p.getPatient_id());
+		}
+		
+		for(Doctor_id d : drepo.findAll()) {
+			doctor_ids.add(d.getDoctor_id());
+		}
+	}
+	
 //	public IdsArrays() {
 //		this.doctor_ids = doctor_ids;
 //		this.patient_ids = patient_ids;
@@ -38,4 +62,5 @@ public class IdsArrays {
 	public void addDoctorId(Integer did) {
 		doctor_ids.add(did);
 	}
+
 }

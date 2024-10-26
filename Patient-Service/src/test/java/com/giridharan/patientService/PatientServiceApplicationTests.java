@@ -1,4 +1,4 @@
-package com.giridharan;
+package com.giridharan.patientService;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

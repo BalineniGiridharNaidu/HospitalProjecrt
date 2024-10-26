@@ -7,5 +7,5 @@ import com.giridharan.appointmentService.entity.Doctor_id;
 
 @Repository
 public interface doctor_id_repo extends JpaRepository<Doctor_id, Integer>{
-
+	
 }
